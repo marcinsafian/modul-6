@@ -5,6 +5,7 @@ import com.kodilla.stream.beautifier.reference.PoemBeautifierReference;
 import com.kodilla.stream.beautifier.reference.PoemExecutor;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.iterate.*;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -29,6 +30,9 @@ public class StreamMain {
 
         PoemExecutor poemExecutor = new PoemExecutor();
         poemExecutor.executeBeauti("Lorem ipsum",PoemBeautifierReference::doSth);
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
     }
 
