@@ -1,5 +1,6 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -18,6 +19,11 @@ public class StreamMain {
         expressionExecutor.executeExpression(3,4,FunctionalCalculator::divideAByB);
         expressionExecutor.executeExpression(3,4,FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(3,4,FunctionalCalculator::subBFromA);
+
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("tapped using small letters",(m)->m.toUpperCase());
+        poemBeautifier.beautify("TAPPED using CAPITAL LETTERS", (m)->m.toLowerCase());
+        poemBeautifier.beautify("Lorem ipsum dolor sit amet.",(m)->m.replace('m','Z'));
 
     }
 
