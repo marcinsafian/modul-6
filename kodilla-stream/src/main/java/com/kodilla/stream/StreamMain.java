@@ -4,15 +4,11 @@ import com.kodilla.stream.lambda.*;
 
 public class StreamMain {
     public static void main(String[] args) {
-        Processor process = new Processor();
-       /* ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        SaySomething saySomething = new SaySomething();
-        process.execute(executeSaySomething);
-        process.execute(saySomething);
+        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
-        */
-
-       //lambda
-       process.execute(()->System.out.println("Test lambda"));
+        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
+        expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
+        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
+        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
     }
 }
