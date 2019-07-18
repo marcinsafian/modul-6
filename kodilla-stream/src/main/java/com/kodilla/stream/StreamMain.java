@@ -1,6 +1,8 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.beautifier.reference.PoemBeautifierReference;
+import com.kodilla.stream.beautifier.reference.PoemExecutor;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -24,6 +26,9 @@ public class StreamMain {
         poemBeautifier.beautify("tapped using small letters",(m)->m.toUpperCase());
         poemBeautifier.beautify("TAPPED using CAPITAL LETTERS", (m)->m.toLowerCase());
         poemBeautifier.beautify("Lorem ipsum dolor sit amet.",(m)->m.replace('m','Z'));
+
+        PoemExecutor poemExecutor = new PoemExecutor();
+        poemExecutor.executeBeauti("Lorem ipsum",PoemBeautifierReference::doSth);
 
     }
 
