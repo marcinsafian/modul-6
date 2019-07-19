@@ -1,39 +1,18 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.reference.PoemBeautifierReference;
-import com.kodilla.stream.beautifier.reference.PoemExecutor;
-import com.kodilla.stream.lambda.*;
-import com.kodilla.stream.reference.FunctionalCalculator;
-import com.kodilla.stream.iterate.*;
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+        BookDirectory theBookDirectory = new BookDirectory();
+        String theResultStringOfBooks = theBookDirectory.getList().stream()
+                .filter(book -> book.getYearOfPublication() > 2005)
+                .map(Book::toString)
+                .collect(Collectors.joining(",\n","<<",">>"));
 
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
-
-        System.out.println("Calculating expressions with method references");
-
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::addAToB);
-        expressionExecutor.executeExpression(3,4,FunctionalCalculator::divideAByB);
-        expressionExecutor.executeExpression(3,4,FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(3,4,FunctionalCalculator::subBFromA);
-
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("tapped using small letters",(m)->m.toUpperCase());
-        poemBeautifier.beautify("TAPPED using CAPITAL LETTERS", (m)->m.toLowerCase());
-        poemBeautifier.beautify("Lorem ipsum dolor sit amet.",(m)->m.replace('m','Z'));
-
-        PoemExecutor poemExecutor = new PoemExecutor();
-        poemExecutor.executeBeauti("Lorem ipsum",PoemBeautifierReference::doSth);
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
-
+        System.out.println(theResultStringOfBooks);
     }
-
 }
