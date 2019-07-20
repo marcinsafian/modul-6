@@ -1,8 +1,15 @@
 package com.kodilla.stream.array;
 
+import java.util.stream.IntStream;
+
 public interface ArrayOperations {
     static double getAverage(int[] numbers){
-
-        return 0;
+        IntStream.range(0,numbers.length)
+                .map(o ->numbers[o] )
+                .forEach(System.out::println);
+        return IntStream.range(0,numbers.length)
+                .map(o ->numbers[o])
+                .average()
+                .getAsDouble();
     }
 }
