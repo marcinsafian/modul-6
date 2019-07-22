@@ -1,8 +1,10 @@
 package com.kodilla.stream.portfolio;
 
+import com.sun.deploy.config.Config;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 import static java.util.stream.Collectors.toList;
 
@@ -26,7 +28,7 @@ public class BoardTestSuite {
                 user1,
                 user2,
                 LocalDate.now().minusDays(20),
-                LocalDate.now().minusDays(5));
+                LocalDate.now().minusDays(15));
         Task task3 = new Task("Temperatures entity",
                 "Prepare entity for temperatures",
                 user3,
@@ -38,7 +40,7 @@ public class BoardTestSuite {
                 user3,
                 user2,
                 LocalDate.now().minusDays(10),
-                LocalDate.now().plusDays(25));
+                LocalDate.now().plusDays(5));
         Task task5 = new Task("Optimize searching",
                 "Archive data searching has to be optimized",
                 user4,
@@ -130,4 +132,43 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(2, longTasks);
     }
+
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList>taskDays = new ArrayList<>();
+        taskDays.add(new TaskList("In progress"));
+
+        int daysOfTask = project.getTaskLists().stream()
+                .filter(taskDays::contains)
+                .flatMap(f1->f1.getTasks().stream())
+                .map(f -> Period.between(f.getCreated(),LocalDate.now()).getDays())
+                .reduce(0,(sum, current)-> sum += current);
+
+        int qntOfTask = project.getTaskLists().stream()
+                .filter(taskDays::contains)
+                .flatMap(m -> m.getTasks().stream())
+                .map(z -> 1)
+                .reduce(0,(sum, current)-> sum+=current);
+
+        double av = daysOfTask/qntOfTask;
+
+        double ave = project.getTaskLists().stream()
+                .filter(taskDays::contains)
+                .flatMap(m ->m.getTasks().stream())
+                .map(t -> Period.between(t.getCreated(),LocalDate.now()).getDays())
+                .mapToInt(Integer::intValue)
+                .average().getAsDouble();
+
+
+
+        //Then
+        Assert.assertEquals(10,av,0.1);
+        Assert.assertEquals(10,ave,0.1);
+    }
+
+
 }
