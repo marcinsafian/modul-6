@@ -1,6 +1,5 @@
 package com.kodilla.stream.world;
 
-import com.kodilla.stream.sand.Europe;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -47,7 +46,7 @@ public final class WorldTestSuite {
         //When
         BigDecimal thePeople = world.getPeopleQuantyty();
         //Then
-        BigDecimal expected = new BigDecimal("900 000 081");
+        BigDecimal expected = new BigDecimal(900000081);
         Assert.assertEquals(expected,thePeople);
     }
 

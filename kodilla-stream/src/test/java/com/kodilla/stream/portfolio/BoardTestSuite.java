@@ -1,6 +1,5 @@
 package com.kodilla.stream.portfolio;
 
-import com.sun.deploy.config.Config;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
