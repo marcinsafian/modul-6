@@ -15,17 +15,17 @@ public final class WorldTestSuite {
         Continent asia = new Continent("Asia");
         Continent africa = new Continent("Africa");
 
-        Country poland = new Country("Poland",new BigDecimal("100000009"));
-        Country czechRepublic = new Country("CzechRepublic",new BigDecimal("100000009"));
-        Country romania = new Country("Romania",new BigDecimal("100000009"));
+        Country poland = new Country("Poland",new BigDecimal(100000009));
+        Country czechRepublic = new Country("CzechRepublic",new BigDecimal(100000009));
+        Country romania = new Country("Romania",new BigDecimal(100000009));
 
-        Country japan = new Country("Japan",new BigDecimal("100000009"));
-        Country china = new Country("China",new BigDecimal("100000009"));
-        Country taiwan = new Country("Taiwan",new BigDecimal("100000009"));
+        Country japan = new Country("Japan",new BigDecimal(100000009));
+        Country china = new Country("China",new BigDecimal(100000009));
+        Country taiwan = new Country("Taiwan",new BigDecimal(100000009));
 
-        Country kongo = new Country("Kongo",new BigDecimal("100000009"));
-        Country rpa = new Country("RPA",new BigDecimal("100000009"));
-        Country maroko = new Country("Maroko",new BigDecimal("100000009"));
+        Country kongo = new Country("Kongo",new BigDecimal(100000009));
+        Country rpa = new Country("RPA",new BigDecimal(100000009));
+        Country maroko = new Country("Maroko",new BigDecimal(100000009));
 
         world.addContinent(europe);
         world.addContinent(asia);
