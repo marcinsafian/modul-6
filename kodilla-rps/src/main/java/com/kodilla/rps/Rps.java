@@ -36,7 +36,9 @@ class Rps {
                         gameRound = roundsOfGame;
                         break;
                         default:
-                            System.out.println("Lets go...");
+                            userShape = Shapes.valueOf(userPlayerRoung.toLowerCase());
+                            comShape = generator.shapesGenerated(userShape);
+                            userInterface.roundResult(userShape,comShape);
 
                 }
         }
