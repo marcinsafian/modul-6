@@ -4,13 +4,7 @@ import java.util.Scanner;
 
 class Rps {
 
-    private static final String EXIT = "x";
-    private static final String NEW_GAME = "n";
     private int roundsOfGame;
-    private int gameRound=0;
-    private String userPlayerRoung;
-    private boolean end = false;
-    Shapes userShape, comShape;
 
     public boolean run(UserInterface userInterface, Scanner scanner, String playerName) {
         userInterface.numberOfRoundsYouPlay(playerName);
@@ -22,25 +16,7 @@ class Rps {
             }
             }while (roundsOfGame==0);
         userInterface.rulesOfGame();
-
-        Generator generator = new Generator();
-
-        while (gameRound<roundsOfGame){
-            gameRound++;
-                userPlayerRoung = validate.gameImput(scanner.nextLine(),scanner,userInterface);
-                switch (userPlayerRoung){
-                    case EXIT:
-                        end = true;
-                        break;
-                    case NEW_GAME:
-                        gameRound = roundsOfGame;
-                        break;
-                        default:
-                            System.out.println("Lets go...");
-
-                }
-        }
-        return false;
+        return true;
     }
 }
 
