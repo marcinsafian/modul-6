@@ -1,9 +1,8 @@
-package com.kodilla.exception.main;
+package com.kodilla.exception;
 
-import com.kodilla.exception.FileReaderException;
 import com.kodilla.exception.io.FileReader;
 
-public class ExceptionModuleRunner {
+public class FileReaderException extends Exception {
     public static void main(String[]args) {
 
         FileReader fileReader = new FileReader();
