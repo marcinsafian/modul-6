@@ -25,9 +25,15 @@ public class UserInterface {
         System.out.println("Use only: '1'; '2'; '3'; 'n' or 'x' ");
     }
     public void roundResult(Shapes userShape, Shapes compShape){
-        System.out.println(String.format("you:   ------ vs -----  : copmuter ",userShape,compShape));
+        System.out.println("you:   ------ vs -----  : copmuter \n" + userShape +" vs " +compShape);
     }
     public void winMesageUser(String playerName, int userScore, int compScore){
-        System.out.println(String.format(" wins! won: Computer won: ", playerName, playerName,userScore,compScore));
+        System.out.println(" You wins!"+" "+ playerName+ " "+userScore+" : "+compScore);
+    }
+    public void winMesageComputer(String playerName, int userScore, int compScore){
+        System.out.println("Loser! Computer wins!"+" "+playerName+" "+userScore+ " : "+compScore);
+    }public void draw(String playerName, int userScore, int compScore){
+        System.out.println("It`s draw! "+ userScore);
+
     }
 }

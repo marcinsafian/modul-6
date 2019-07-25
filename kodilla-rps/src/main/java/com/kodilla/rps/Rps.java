@@ -34,31 +34,33 @@ class Rps {
                 userPlayerRound = validate.gameImput(scanner.nextLine(),scanner,userInterface);
                 switch (userPlayerRound){
                     case EXIT:
-                        end = true;
+                        end = false;
                         gameRound=roundsOfGame;
                         break;
                     case NEW_GAME:
                         gameRound = roundsOfGame;
                         break;
                         default:
-                            userShape = Shapes.valueOf(userPlayerRound.toLowerCase());
+                            userShape = Shapes.valueOf(userPlayerRound.toUpperCase());
                             comShape = generator.shapesGenerated(userShape);
                             userInterface.roundResult(userShape,comShape);
                             if(!userShape.equals(comShape)){
-                                if (userShape.equals(Shapes.STONE)&&comShape.equals(Shapes.SCISSORS)||userShape.equals(Shapes.SCISSORS)&&comShape.equals(Shapes.PAPER)||userShape.equals(Shapes.PAPER)&&comShape.equals(Shapes.STONE)){
+                                if (userShape.equals(Shapes.STONE)&&comShape.equals(Shapes.SCISSORS)||userShape.equals(Shapes.SCISSORS)&&
+                                        comShape.equals(Shapes.PAPER)||userShape.equals(Shapes.PAPER)&&comShape.equals(Shapes.STONE)){
                                     userScor++;
                                     userInterface.winMesageUser(playerName,userScor,compScore);
                                 }else {
                                     compScore++;
-                                    userInterface.winMesageUser(playerName, userScor, compScore);
+                                    userInterface.winMesageComputer(playerName, userScor, compScore);
                                 }
                                 }else {
-                                userInterface.quitMessage();
+                                userInterface.draw(playerName, userScor, compScore);
                             }
 
 
                 }
         }
+        //displayScores
         return false;
     }
 }
