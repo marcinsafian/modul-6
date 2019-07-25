@@ -1,7 +1,8 @@
 package com.kodilla.rps;
 
 public class Generator {
-    private Shapes shapesGenerated;
+    Shapes shapesGenerated;
+
 
     public Shapes shapesGenerated(Shapes userShape){
         switch (userShape){
@@ -14,4 +15,5 @@ public class Generator {
         }
         return shapesGenerated;
     }
+
 }

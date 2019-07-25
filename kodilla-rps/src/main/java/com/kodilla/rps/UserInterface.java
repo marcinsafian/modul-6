@@ -25,6 +25,9 @@ public class UserInterface {
         System.out.println("Use only: '1'; '2'; '3'; 'n' or 'x' ");
     }
     public void roundResult(Shapes userShape, Shapes compShape){
-        System.out.println(String.format("you: %s   ------ vs ----- %s : copmuter ",userShape,compShape));
+        System.out.println(String.format("you:   ------ vs -----  : copmuter ",userShape,compShape));
+    }
+    public void winMesageUser(String playerName, int userScore, int compScore){
+        System.out.println(String.format(" wins! won: Computer won: ", playerName, playerName,userScore,compScore));
     }
 }

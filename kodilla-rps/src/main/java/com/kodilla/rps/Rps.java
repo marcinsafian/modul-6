@@ -7,8 +7,10 @@ class Rps {
     private static final String EXIT = "x";
     private static final String NEW_GAME = "n";
     private int roundsOfGame;
-    private int gameRound=0;
-    private String userPlayerRoung;
+    int gameRound=0;
+    private int userScor =0;
+    private int compScore =0;
+    private String userPlayerRound;
     private boolean end = false;
     Shapes userShape, comShape;
 
@@ -21,24 +23,39 @@ class Rps {
                 userInterface.errorRoundValue();
             }
             }while (roundsOfGame==0);
+
         userInterface.rulesOfGame();
 
         Generator generator = new Generator();
 
+
         while (gameRound<roundsOfGame){
             gameRound++;
-                userPlayerRoung = validate.gameImput(scanner.nextLine(),scanner,userInterface);
-                switch (userPlayerRoung){
+                userPlayerRound = validate.gameImput(scanner.nextLine(),scanner,userInterface);
+                switch (userPlayerRound){
                     case EXIT:
                         end = true;
+                        gameRound=roundsOfGame;
                         break;
                     case NEW_GAME:
                         gameRound = roundsOfGame;
                         break;
                         default:
-                            userShape = Shapes.valueOf(userPlayerRoung.toLowerCase());
+                            userShape = Shapes.valueOf(userPlayerRound.toLowerCase());
                             comShape = generator.shapesGenerated(userShape);
                             userInterface.roundResult(userShape,comShape);
+                            if(!userShape.equals(comShape)){
+                                if (userShape.equals(Shapes.STONE)&&comShape.equals(Shapes.SCISSORS)||userShape.equals(Shapes.SCISSORS)&&comShape.equals(Shapes.PAPER)||userShape.equals(Shapes.PAPER)&&comShape.equals(Shapes.STONE)){
+                                    userScor++;
+                                    userInterface.winMesageUser(playerName,userScor,compScore);
+                                }else {
+                                    compScore++;
+                                    userInterface.winMesageUser(playerName, userScor, compScore);
+                                }
+                                }else {
+                                userInterface.quitMessage();
+                            }
+
 
                 }
         }

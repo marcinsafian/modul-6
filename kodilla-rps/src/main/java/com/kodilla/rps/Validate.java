@@ -23,9 +23,9 @@ public class Validate {
         while (true){
          switch (input){
              case CHOICE_1:
-                 return STONE.getText();
+                 return String.valueOf(STONE);
              case CHOICE_2:
-                 return PAPER.getText();
+                 return String.valueOf(PAPER);
              case CHOICE_3:
                  return SCISSORS.getText();
              case END:
