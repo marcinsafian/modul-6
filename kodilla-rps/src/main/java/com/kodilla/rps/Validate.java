@@ -11,13 +11,15 @@ public class Validate {
     private static final String END = "x";
     private static final String YES = "y";
 
-    public int number(String rounds){
-    if (rounds.isEmpty()){
-        return 0;
+    public int number(String rounds) {
+        int d = Integer.parseInt(rounds);
+        boolean x = Character.isDigit(d);
 
-    }else {
-        return Integer.parseInt(rounds);
-        }
+            if (rounds.isEmpty()) {
+                return 0;
+            } else {
+                return Integer.parseInt(rounds);
+            }
     }
     public String gameImput(String input, Scanner scanner, UserInterface userInterface){
         while (true){
