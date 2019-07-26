@@ -12,10 +12,10 @@ public class Validate {
     private static final String YES = "y";
 
     public int number(String rounds) {
-        int d = Integer.parseInt(rounds);
-        boolean x = Character.isDigit(d);
+        char value = rounds.toCharArray()[0];
+        boolean check = Character.isDigit(value);
 
-            if (rounds.isEmpty()) {
+            if (rounds.isEmpty()||!check) {
                 return 0;
             } else {
                 return Integer.parseInt(rounds);
