@@ -27,7 +27,7 @@ public class Validate {
              case CHOICE_2:
                  return String.valueOf(PAPER);
              case CHOICE_3:
-                 return SCISSORS.getText();
+                 return String.valueOf(SCISSORS);
              case END:
                  userInterface.quitMessage();
                  input = scanner.nextLine();
@@ -54,14 +54,14 @@ public class Validate {
                 case END:
                     userInterface.endMessage();
                     input = scanner.nextLine();
-                    if (input.equals(YES)){
+                    if (input.toLowerCase().equals(YES)){
                         return END;
                     }
                     break;
                 case NEW_GAME:
                     userInterface.continueGame();
                     input = scanner.nextLine();
-                    if (input.equals(YES)){
+                    if (input.toLowerCase().equals(YES)){
                         return NEW_GAME;
                     }
                     break;
