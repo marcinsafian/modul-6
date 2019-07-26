@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Rps {
 
-    private static final String EXIT = "x";
+    private static final String END = "x";
     private static final String NEW_GAME = "n";
     private int roundsOfGame;
     int gameRound=0;
@@ -33,7 +33,7 @@ class Rps {
             gameRound++;
                 userPlayerRound = validate.gameImput(scanner.nextLine(),scanner,userInterface);
                 switch (userPlayerRound){
-                    case EXIT:
+                    case END:
                         end = false;
                         gameRound=roundsOfGame;
                         break;
@@ -60,8 +60,12 @@ class Rps {
 
                 }
         }
-        //displayScores
-        return false;
+        userInterface.scoresDisplay(userScor, compScore);
+        userPlayerRound = validate.endGame(scanner.nextLine(),scanner,userInterface);
+        if (userPlayerRound.equals(END)){
+            end = true;
+        }
+        return end;
     }
 }
 

@@ -34,6 +34,19 @@ public class UserInterface {
         System.out.println("Loser! Computer wins!"+" "+playerName+" "+userScore+ " : "+compScore);
     }public void draw(String playerName, int userScore, int compScore){
         System.out.println("It`s draw! "+ userScore);
-
+    }
+    public void scoresDisplay(int userScore, int compScore){
+        System.out.println("-------------------------------------------------"+
+                "\nGAME OVER!"+"\n You have won: "+userScore+" "+"Computer has won: "+compScore);
+        System.out.println("\n Would you like try one more time? \n'n' - start new game\n 'x' - EXIT");
+    }
+    public void endMessage(){
+        System.out.println("Koniec?");
+    }
+    public void continueGame(){
+        System.out.println("Grasz dalej");
+    }
+    public void incorrectEnd(){
+        System.out.println("Coś nie pykło");
     }
 }

@@ -48,5 +48,29 @@ public class Validate {
          }
         }
     }
+    public String endGame(String input, Scanner scanner,UserInterface userInterface){
+        while (true){
+            switch (input){
+                case END:
+                    userInterface.endMessage();
+                    input = scanner.nextLine();
+                    if (input.equals(YES)){
+                        return END;
+                    }
+                    break;
+                case NEW_GAME:
+                    userInterface.continueGame();
+                    input = scanner.nextLine();
+                    if (input.equals(YES)){
+                        return NEW_GAME;
+                    }
+                    break;
+                default:
+                    userInterface.incorrectEnd();
+                    input = scanner.nextLine();
+            }
+        }
+
+    }
 
 }
