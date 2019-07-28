@@ -7,7 +7,7 @@ class Rps {
     private static final String END = "x";
     private static final String NEW_GAME = "n";
     private int roundsOfGame;
-    int gameRound=0;
+    private int gameRound=0;
     private int userScor =0;
     private int compScore =0;
     private String userPlayerRound;
@@ -15,19 +15,12 @@ class Rps {
     Shapes userShape, comShape;
 
     public boolean run(UserInterface userInterface, Scanner scanner, String playerName) {
-        userInterface.numberOfRoundsYouPlay(playerName);
         Validate validate = new Validate();
-        do {
-            roundsOfGame = validate.number(scanner.nextLine());
-            if (roundsOfGame==0) {
-                userInterface.errorRoundValue();
-            }
-            }while (roundsOfGame==0);
 
+        roundsOfGame = validate.number(playerName);
         userInterface.rulesOfGame();
 
         Generator generator = new Generator();
-
 
         while (gameRound<roundsOfGame){
             gameRound++;

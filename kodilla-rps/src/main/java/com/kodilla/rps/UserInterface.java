@@ -4,12 +4,7 @@ public class UserInterface {
     public void helloMessage(){
         System.out.println("Welcome. Let`s play...\n What is Your name");
     }
-    public void numberOfRoundsYouPlay(String playerName){
-        System.out.println("How many rounds you wish to play "+playerName+" ?");
-    }
-    public void errorRoundValue(){
-        System.out.println("Incorrect numbers of round");
-    }
+
     public void rulesOfGame(){
         System.out.println("Book of rules");
         System.out.println("menu:\n'1' - take \"stone\""+"\n"+"'2' - take \"paper\""+"\n"+"'3' - take \"scissors\""+
@@ -41,10 +36,10 @@ public class UserInterface {
         System.out.println("\n Would you like try one more time? \n'n' - start new game\n 'x' - EXIT");
     }
     public void endMessage(){
-        System.out.println("Koniec?");
+        System.out.println("Do you really quit? (Y/N)");
     }
     public void continueGame(){
-        System.out.println("Grasz dalej");
+        System.out.println("Steal play? (Y/N)");
     }
     public void incorrectEnd(){
         System.out.println("Coś nie pykło");

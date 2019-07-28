@@ -18,20 +18,7 @@ public class ValidatorTests {
         scanner = new Scanner("Y");
         userInterface = new UserInterface();
     }
-    @Test
-    public void testEmptyString(){
-        assertEquals(0,validate.number(""));
-    }
-   /* @Test
-    public void testStringWithWrongChar(){
-        assertEquals(0,validate.number("2/2"));
-    }//dopisać w Validate sprawdzenie czy jest cyfrą
 
-    */
-   @Test
-    public void testCorrectNumber(){
-       assertEquals(99,validate.number("99"));
-   }
    @Test
     public void testStoneInput(){
        assertEquals("STONE",validate.gameImput("1",scanner,userInterface));

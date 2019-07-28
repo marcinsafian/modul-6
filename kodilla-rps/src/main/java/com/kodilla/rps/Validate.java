@@ -11,15 +11,19 @@ public class Validate {
     private static final String END = "x";
     private static final String YES = "y";
 
-    public int number(String rounds) {
-        char value = rounds.toCharArray()[0];
-        boolean check = Character.isDigit(value);
+    public static int number(String userName) {
 
-            if (rounds.isEmpty()||!check) {
-                return 0;
-            } else {
-                return Integer.parseInt(rounds);
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+          System.out.println("How many rounds you wish to play: "+ userName);
+            String s = sc.nextLine();
+            try {
+                return Integer.parseInt(s);
+            } catch (Exception e) {
+                System.out.println("Wrong number, try again.");
             }
+        }
     }
     public String gameImput(String input, Scanner scanner, UserInterface userInterface){
         while (true){
@@ -40,10 +44,11 @@ public class Validate {
              case NEW_GAME:
                  userInterface.newGame();
                  input = scanner.nextLine();
-                 if(input.toLowerCase().equals(YES)){
+                 if(!input.toLowerCase().equals(YES)){
                      return NEW_GAME;
+                 }else {
+                     return END;
                  }
-                 break;
                  default:
                      userInterface.incorrectImput();
                      input = scanner.nextLine();
@@ -63,10 +68,11 @@ public class Validate {
                 case NEW_GAME:
                     userInterface.continueGame();
                     input = scanner.nextLine();
-                    if (input.toLowerCase().equals(YES)){
+                    if (!input.toLowerCase().equals(YES)){
+                        return END;
+                    }else {
                         return NEW_GAME;
                     }
-                    break;
                 default:
                     userInterface.incorrectEnd();
                     input = scanner.nextLine();
