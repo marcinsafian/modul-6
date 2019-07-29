@@ -13,26 +13,26 @@ public class RunFlight {
             boolean existWienWar = flightSearcher.findFlight(wienWar);
             System.out.println("Flight Vienna Warsaw: "+existWienWar);
         }catch (RouteNotFoundException e){
-            System.out.println("You are not allowed to fly");
+            System.out.println("You are not allowed to fly  "+e);
         }
         try {
             boolean existMoscPrag = flightSearcher.findFlight(moscPrag);
             System.out.println("Flight Moscow Prague: "+existMoscPrag);
         }catch (RouteNotFoundException e){
-            System.out.println("You are not allowed to fly");
+            System.out.println("You are not allowed to fly "+e);
         }
 
         try {
             boolean existWarPrag = flightSearcher.findFlight(warPrag);
             System.out.println("Flight Warsaw Prague: "+existWarPrag);
         }catch (RouteNotFoundException e){
-            System.out.println("You are not allowed to fly");
+            System.out.println("You are not allowed to fly "+e);
         }
         try {
             boolean existNoName = flightSearcher.findFlight(noName);
             System.out.println("Flight from Nowhere to Nowhere: "+existNoName);
         }catch (RouteNotFoundException e){
-            System.out.println("You are not allowed to fly");
+            System.out.println("You are not allowed to fly "+e);
         }
     }
 }
