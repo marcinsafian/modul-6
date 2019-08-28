@@ -37,7 +37,7 @@ public class ValidatorTests {
     }
     @Test
     public void testNewGameContinue(){
-       assertEquals("n",validate.gameImput("n",scanner,userInterface));
+       assertEquals("x",validate.gameImput("x",scanner,userInterface));
     }
     @Test
     public void testEndGameAndNewOne(){
