@@ -1,4 +1,10 @@
 package com.kodilla.good.patterns.shop;
 
-public class BicycleOrderService {
+import java.time.LocalDateTime;
+
+public class BicycleOrderService implements ProductOrderService {
+    @Override
+    public boolean sold(User user, LocalDateTime orderDate, Product product, int quantity) {
+        return true;
+    }
 }
