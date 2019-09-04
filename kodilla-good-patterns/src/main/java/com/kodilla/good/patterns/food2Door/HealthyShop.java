@@ -12,7 +12,7 @@ public class HealthyShop implements FoodProducer {
     }
     private Map<Product,Integer> createProductList(){
         Map<Product,Integer> productList =new HashMap<>();
-        productList.put(new GlutenFreeProduct("pasta", "Noodles made from rice flour"), 20);
+        productList.put(new GlutenFreeProduct("pasta", "Noodles made from rice flour"), 25);
         productList.put(new GlutenFreeProduct("corn crisps", "Crisps made from corn flour"), 15);
         productList.put(new GrainProduct("spaghetti pasta", true), 20);
         productList.put(new GrainProduct("spelt flour", true), 4);
