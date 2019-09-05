@@ -12,7 +12,5 @@ public class FlightsDb {
     public Set<Flight> getAvailableFlight() {
         return availableFlight;
     }
-    public FlightsDb(){
 
-    }
 }
