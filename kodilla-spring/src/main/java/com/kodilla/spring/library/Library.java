@@ -7,20 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class Library {
+public final class Library {
     private final List<String> books = new ArrayList<>();
-
-    @Autowired
     private LibraryDbController libraryDbController;
 
-    public Library(){
-        //do nothing
+    public Library(final LibraryDbController libraryDbController) {
+        this.libraryDbController = libraryDbController;
     }
 
-    public void saveToDb(){
+    public Library() {
+    }
+
+    public void saveToDb() {
         libraryDbController.saveData();
     }
-    public void loadFromDb(){
+
+    public void loadFromDb() {
         libraryDbController.loadData();
     }
 }
