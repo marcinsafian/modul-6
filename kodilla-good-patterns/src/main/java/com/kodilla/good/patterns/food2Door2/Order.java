@@ -5,7 +5,7 @@ public class Order {
     private Product product;
     private int volume;
 
-    public Order(User user, Product product, int quantity) {
+    public Order(User user, Product product, int volume) {
         this.user = user;
         this.product = product;
         this.volume = volume;

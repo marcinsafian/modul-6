@@ -12,8 +12,6 @@ public class ProductCollection {
         }
             productList.add(product);
             return true;
-
-
     }
     public List<Product> getProductList(){
         return productList;

@@ -21,7 +21,10 @@ public class ProducersRepository {
     public boolean isAvailableProduct(Product product, int volume){
         for (Map.Entry<ProducerOrder, ProductCollection> c: registerProducers.entrySet()){
             for (Product currentProduct : c.getValue().getProductList()){
-                if (currentProduct.equals(product) && currentProduct.getQuantity() > volume);
+                if (currentProduct.equals(product) && currentProduct.getQuantity() > volume){
+                    product.setQuantity(volume);
+                    return true;
+                };
             }
         }
         return false;

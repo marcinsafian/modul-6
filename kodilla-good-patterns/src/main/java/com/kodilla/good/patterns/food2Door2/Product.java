@@ -17,11 +17,13 @@ public class Product {
         return quantity;
     }
 
+    public void setQuantity(int volume) {
+        this.quantity = quantity-volume;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
-                "productName='" + productName + '\'' +
-                ", quantity=" + quantity +
-                '}';
+        return "Product " + productName +
+                ", quantity " + quantity;
     }
 }
