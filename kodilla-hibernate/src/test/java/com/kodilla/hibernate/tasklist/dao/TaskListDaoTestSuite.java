@@ -12,34 +12,36 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
 public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
 
+
     private static final String LISTNAME = "To Do";
-    private static final String DESCRIPTION_1 = "1st task to do";
-    private static final String DESCRIPTION_2 = "2nd task to do";
+    private static final String DESCRIPTION_1 = "1st List with tasks to do";
+    private static final String DESCRIPTION_2 = "2nd List with tasks to do";
+
+
 
     @Test
-    public void testFindByListName(){
+    public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList(LISTNAME, DESCRIPTION_1);
-        TaskList taskList1 = new TaskList(LISTNAME, DESCRIPTION_2);
+        TaskList taskList1 = new TaskList(LISTNAME, DESCRIPTION_1);
+        TaskList taskList2 = new TaskList(LISTNAME, DESCRIPTION_2);
 
         //When
-        taskListDao.save(taskList);
         taskListDao.save(taskList1);
+        taskListDao.save(taskList2);
 
         //Then
-        List<TaskList> theList = taskListDao.findByListName(LISTNAME);
+        List<TaskList> readTaskList = taskListDao.findByListName(LISTNAME);
 
-        Assert.assertEquals(2, theList.size());
-        Assert.assertEquals(LISTNAME, theList.get(0).getListName());
-        Assert.assertEquals(LISTNAME, theList.get(1).getListName());
+        Assert.assertEquals(2, readTaskList.size());
+        Assert.assertEquals(LISTNAME, readTaskList.get(0).getListName());
+        Assert.assertEquals(LISTNAME, readTaskList.get(1).getListName());
 
         //CleanUp
-        taskListDao.delete(taskList);
-        taskListDao.delete(taskList1);
+       // taskListDao.delete(taskList1);
+        //taskListDao.delete(taskList2);
     }
 }
