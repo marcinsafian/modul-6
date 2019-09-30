@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
-    private int id;
+    private Integer id;
     private String name;
     private List<Employee> employees = new ArrayList<>();
 
@@ -20,10 +20,10 @@ public class Company {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
     @NotNull
     @Column(name = "COMPANY_ID", unique = true)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

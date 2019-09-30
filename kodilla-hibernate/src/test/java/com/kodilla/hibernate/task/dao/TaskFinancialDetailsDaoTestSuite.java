@@ -15,7 +15,7 @@ import java.util.List;
 @SpringBootTest
 public class TaskFinancialDetailsDaoTestSuite {
     @Autowired
-    TaskFinancialDetailsDao taskFinancialDetailsDao;
+    private TaskFinancialDetailsDao taskFinancialDetailsDao;
 
     @Test
     public void testFindByPaid() {
