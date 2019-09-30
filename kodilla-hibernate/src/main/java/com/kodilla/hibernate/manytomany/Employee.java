@@ -22,7 +22,7 @@ public class Employee {
     }
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
+    @GeneratedValue
     @NotNull
     @Column(name = "EMPLOYEE_ID", unique = true)
     public Integer getId() {

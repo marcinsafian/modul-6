@@ -20,7 +20,7 @@ public class Company {
     }
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
+    @GeneratedValue
     @NotNull
     @Column(name = "COMPANY_ID", unique = true)
     public Integer getId() {
