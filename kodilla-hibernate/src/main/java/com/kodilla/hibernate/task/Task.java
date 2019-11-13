@@ -62,11 +62,13 @@ public final class Task {
     public int getDuration() {
         return duration;
     }
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "TASKS_FINANCIAL_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
+
     @ManyToOne
     @JoinColumn(name = "TASKLIST_ID")
     public TaskList getTaskList() {
