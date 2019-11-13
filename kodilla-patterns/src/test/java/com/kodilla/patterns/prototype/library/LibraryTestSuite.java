@@ -8,7 +8,7 @@ import java.time.Month;
 
 public class LibraryTestSuite {
     @Test
-    public void testGetBooks(){
+    public void testGetBooks() {
         //Given
         Library library = new Library("secret Library");
         Book book1 = new Book("Secrets shadows of Grey", "Donald Duck", LocalDate.of(208, Month.MAY, 15));
@@ -22,17 +22,17 @@ public class LibraryTestSuite {
         library.addBook(book4);
 
         Library clonedLibrary = null;
-        try{
+        try {
             clonedLibrary = library.shallowCopy();
             clonedLibrary.setName("secret Library - shallowCopy");
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         Library deepClonedLibrary = null;
-        try{
+        try {
             deepClonedLibrary = library.deepCopy();
             deepClonedLibrary.setName("secret Library - deepCopy");
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         //When

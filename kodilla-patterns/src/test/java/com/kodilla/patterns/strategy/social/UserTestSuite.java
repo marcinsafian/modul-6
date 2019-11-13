@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class UserTestSuite {
     @Test
-    public void testDefaultSharingStrategies(){
+    public void testDefaultSharingStrategies() {
         //Given
         User millenials = new Millenials("Nancy");
         User yGeneration = new YGeneration("Tod");
@@ -21,14 +21,15 @@ public class UserTestSuite {
         Assert.assertEquals("Twitter", twitter);
 
     }
+
     @Test
-    public void testIndividualSharingStrategy(){
+    public void testIndividualSharingStrategy() {
         //Given
         User millenials = new Millenials("Nancy");
         millenials.setSocialPublisher(new FacebookPublisher());
         //When
         String faceBook = millenials.sharePost();
         //Then
-        Assert.assertEquals("Facebook",faceBook);
+        Assert.assertEquals("Facebook", faceBook);
     }
 }
