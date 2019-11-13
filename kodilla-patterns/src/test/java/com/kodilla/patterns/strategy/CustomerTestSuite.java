@@ -3,6 +3,7 @@ package com.kodilla.patterns.strategy;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class CustomerTestSuite {
     @Test
     public void testDefaultInvestingStrategies() {
