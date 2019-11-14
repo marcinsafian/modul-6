@@ -1,8 +1,6 @@
 package com.kodila.kodilapatterns_2.facade;
 
-
-import com.kodila.kodilapatterns_2.facade.api.OrderFacade;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +13,7 @@ import java.math.BigDecimal;
 public class ShopServiceTestSuite {
     @Autowired
     private ShopService shopService;
-    @Autowired
-    private OrderFacade orderFacade;
+
 
     @Test
     public void testShopServiceSubmitOrder() {

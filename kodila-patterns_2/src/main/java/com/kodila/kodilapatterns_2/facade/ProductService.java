@@ -1,6 +1,5 @@
 package com.kodila.kodilapatterns_2.facade;
 
-
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
