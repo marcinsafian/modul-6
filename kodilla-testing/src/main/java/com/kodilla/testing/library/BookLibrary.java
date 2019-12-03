@@ -23,7 +23,10 @@ public class BookLibrary {
 
         return libraryUserBooksInHandsOf;
     }
+    public int returnBooks(LibraryUser libraryUser) {
+        List<LibraryUser> newBook = new ArrayList<>();
+        newBook.remove(libraryDatabase.listBooksInHandsOf(libraryUser));
 
-
-
+        return newBook.size();
+    }
 }

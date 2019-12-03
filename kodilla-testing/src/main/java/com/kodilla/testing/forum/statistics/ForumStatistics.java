@@ -71,6 +71,7 @@ public class ForumStatistics {
     }
 
     public void showStatistics(){
+
         System.out.println("Forum advanced statistics:");
         System.out.println("Users quantity: " + usersQty);
         System.out.println("Posts quantity: " + postsQty);
@@ -78,5 +79,7 @@ public class ForumStatistics {
         System.out.println("Posts average per user" + postsAvgPerUser);
         System.out.println("Comments average per user" + commentsAvgPerUser);
         System.out.println("Comments average per post" + commentsAvgPerPost);
+
+
     }
 }

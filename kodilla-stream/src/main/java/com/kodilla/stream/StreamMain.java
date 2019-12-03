@@ -1,5 +1,7 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 import java.time.*;
@@ -28,12 +30,19 @@ public class StreamMain {
          */
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-              poemBeautifier.beautify("tapped using small letters",(m)->m.toUpperCase());
-              poemBeautifier.beautify("TAPPED using CAPITAL LETTERS", (m)->m.toLowerCase());
-              poemBeautifier.beautify("Lorem ipsum dolor sit amet.",(m)->m.replace('m','Z'));
+        poemBeautifier.beautify("tapped using small letters", (m) -> m.toUpperCase());
+        poemBeautifier.beautify("TAPPED using CAPITAL LETTERS", (m) -> m.toLowerCase());
+        poemBeautifier.beautify("Lorem ipsum dolor sit amet.", (m) -> m.replace('m', 'Z'));
 
-                PoemExecutor poemExecutor = new PoemExecutor();
-                poemExecutor.executeBeauti("Lorem ipsum",PoemBeautifierReference::doSth);
+        PoemExecutor poemExecutor = new PoemExecutor();
+        poemExecutor.executeBeauti("Lorem ipsum", PoemBeautifierReference::doSth);
 
+
+        BookDirectory bookDirectory = new BookDirectory();
+        String someOfBook = bookDirectory.getList().stream()
+                .filter(elo -> elo.getYearOfPublication() > 2007)
+                .map(Book::toString)
+                .collect(Collectors.joining("\n :)", "BUM ", "PLASK"));
+        System.out.println(someOfBook);
     }
 }
